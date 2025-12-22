@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
     // Initialize Eel if available
-    if (typeof eel !== 'undefined') {
-        eel.init()()
+    if (typeof eel !== 'undefined' && typeof eel.init === 'function') {
+        eel.init();
     }
 
     $('.text').textillate({
@@ -40,6 +40,15 @@ $(document).ready(function () {
             effect: "fadeOutUp",
             sync: true,
         },
+
+    });
+
+    // Mic Button Click Event
+
+    $('#MicBtn').click(function () {
+
+        $("#Oval").attr("hidden", true);
+        $("#SiriWave").attr("hidden", false);
 
     });
 
