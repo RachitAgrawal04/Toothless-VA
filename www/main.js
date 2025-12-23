@@ -46,7 +46,7 @@ $(document).ready(function () {
     // Mic Button Click Event
 
     $('#MicBtn').click(function () {
-
+        eel.play_assistant_sound();
         $("#Oval").attr("hidden", true);
         $("#SiriWave").attr("hidden", false);
 
