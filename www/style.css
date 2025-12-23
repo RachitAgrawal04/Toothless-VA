@@ -175,3 +175,8 @@ body{
   
   
   /* Input Filed End*/
+
+/* Siri Section */
+#siri-container, .siri-message {
+  max-width: 100%;
+}
