@@ -49,7 +49,7 @@ $(document).ready(function () {
         eel.play_assistant_sound();
         $("#Oval").attr("hidden", true);
         $("#SiriWave").attr("hidden", false);
-        eel.take_command()(function (response) {
+        eel.takecommand()(function(response) {
+        });
     });
-
 });
