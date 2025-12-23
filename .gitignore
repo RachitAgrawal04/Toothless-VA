@@ -1,1 +1,3 @@
 /envtoothless
+__pycache__/
+*.pyc
