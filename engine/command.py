@@ -18,27 +18,27 @@ def takecommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening...")
-        eel.DisplayMessage("Listening...")
+        eel.displayMessage("Listening...")
         r.pause_threshold = 1
         r.adjust_for_ambient_noise(source)
         try:
             audio = r.listen(source, 10, 7)
         except WaitTimeoutError:
             print("Listening timed out. No phrase detected.")
-            eel.DisplayMessage("Listening timed out. No phrase detected.")
+            eel.displayMessage("Listening timed out. No phrase detected.")
             return "None"
 
     try:
         print("Recognizing...")
-        eel.DisplayMessage("Recognizing...")
+        eel.displayMessage("Recognizing...")
         query = r.recognize_google(audio, language='en-in')
         print(f"User said: {query}\n")
-        eel.DisplayMessage(f"User said: {query}\n")
+        eel.displayMessage(f"User said: {query}\n")
         speak(query)
         return query.lower()
 
     except Exception as e:
         print("Say that again please...")
-        eel.DisplayMessage("Say that again please...")
+        eel.displayMessage("Say that again please...")
         return "None"
 
