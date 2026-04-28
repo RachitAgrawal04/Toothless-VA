@@ -1,0 +1,6 @@
+eel==0.16.0
+pyttsx3
+SpeechRecognition
+pyaudio
+playsound==1.2.2
+wikipedia
