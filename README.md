@@ -10,7 +10,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python" />
-  <img src="https://img.shields.io/badge/Eel-0.16.0-green" />
+  <img src="https://img.shields.io/badge/Eel-0.18.2-green" />
   <img src="https://img.shields.io/badge/Speech%20Recognition-Google-red?logo=google" />
   <img src="https://img.shields.io/badge/TTS-pyttsx3%20%7C%20SAPI5-purple" />
   <img src="https://img.shields.io/badge/Platform-Windows-lightgrey?logo=windows" />
@@ -67,7 +67,9 @@ The assistant bridges Python logic and browser UI using the [Eel](https://github
 | [`eel`](https://github.com/python-eel/Eel) | Python ↔ JavaScript bridge, local web server |
 | [`pyttsx3`](https://github.com/nateshmbhat/pyttsx3) | Offline text-to-speech (Windows SAPI5) |
 | [`SpeechRecognition`](https://github.com/Uberi/speech_recognition) | Microphone capture + Google Speech-to-Text |
+| [`pyaudio`](https://pypi.org/project/PyAudio/) | Audio device support for microphone capture |
 | [`playsound`](https://github.com/TaylorSMarks/playsound) | Play the startup MP3 sound effect |
+| [`wikipedia`](https://pypi.org/project/wikipedia/) | Wikipedia API for search and summaries |
 | `threading` | Non-blocking sound and future async operations |
 
 ### Frontend (Web)
@@ -133,13 +135,13 @@ Toothless-VA/
 
 3. **Install dependencies**
    ```bash
-   pip install eel pyttsx3 SpeechRecognition playsound
+   pip install -r requirements.txt
    ```
-   > **Note:** `SpeechRecognition` requires PyAudio for microphone access. Install it via:
-   > ```bash
-   > pip install pyaudio
-   > ```
-   > If PyAudio fails to install, download the matching wheel from [Christoph Gohlke's site](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio) and install with `pip install <wheel_file>.whl`.
+   or manually:
+   ```bash
+   pip install eel pyttsx3 SpeechRecognition pyaudio playsound wikipedia
+   ```
+   > **Note:** `PyAudio` can be tricky to install on Windows. If `pip install pyaudio` fails, download the matching wheel from [Christoph Gohlke's site](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio) and install with `pip install <wheel_file>.whl`.
 
 ### Running the Assistant
 
