@@ -81,6 +81,32 @@ $(document).ready(function () {
         });
     });
 
+    // Chat Button Click Event — process typed text command
+    $('#ChatBtn').click(function () {
+        var text = $('#chatbox').val().trim();
+        if (!text) return;
+        $('#chatbox').val('');
+        $("#Oval").attr("hidden", true);
+        $("#SiriWave").attr("hidden", false);
+        $('.siri-message').text('Processing...');
+        eel.processText(text)(function(response) {
+            if (response && response !== "None") {
+                $('.siri-message').text(response);
+            }
+            setTimeout(function() {
+                $("#Oval").attr("hidden", false);
+                $("#SiriWave").attr("hidden", true);
+            }, 3000);
+        });
+    });
+
+    // Allow pressing Enter in the chatbox to submit
+    $('#chatbox').on('keypress', function (e) {
+        if (e.which === 13) {
+            $('#ChatBtn').click();
+        }
+    });
+
     // Back button to return to main screen
     $('#BackBtn').click(function () {
         $("#Oval").attr("hidden", false);
